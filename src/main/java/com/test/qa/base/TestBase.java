@@ -44,6 +44,7 @@ public class TestBase {
 			caps.setCapability("udid", prop.getProperty("udid")); 
 			caps.setCapability("platformName",prop.getProperty("Android"));
 			caps.setCapability("platformVersion", prop.getProperty("platformVersion"));
+			
 			caps.setCapability("skipUnlock",  prop.getProperty("skipUnlock"));
 			caps.setCapability("appPackage", prop.getProperty("appPackage"));
 			caps.setCapability("appActivity", prop.getProperty("appActivity"));

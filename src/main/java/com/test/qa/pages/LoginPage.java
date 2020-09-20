@@ -77,10 +77,12 @@ public class LoginPage extends TestBase{
 		System.out.println(AmazonHome);
 		
 		try {
-		Assert.assertEquals("com.amazon.mShop.android.shopping:id/chrome_action_bar_home", AmazonHome); 
+		Assert.assertEquals("07332b75-260b-4d51-8bfb-94a792343338", AmazonHome); 
 		}catch(Exception e) {
 			System.out.println("Login Test case Fail");
 		}
+		
+		
 		
 	}
 	
