@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="58455" started-at="2020-09-20T06:15:03Z" finished-at="2020-09-20T06:16:01Z">
+  <suite name="Default suite" duration-ms="56526" started-at="2020-09-20T06:23:08Z" finished-at="2020-09-20T06:24:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="58455" started-at="2020-09-20T06:15:03Z" finished-at="2020-09-20T06:16:01Z">
+    <test name="Default test" duration-ms="56526" started-at="2020-09-20T06:23:08Z" finished-at="2020-09-20T06:24:05Z">
       <class name="rough.LoginViaExcel">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="setUp" is-config="true" duration-ms="17591" started-at="2020-09-20T06:15:03Z" finished-at="2020-09-20T06:15:20Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="setUp" is-config="true" duration-ms="15052" started-at="2020-09-20T06:23:08Z" finished-at="2020-09-20T06:23:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="amazonLogin()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="amazonLogin" duration-ms="40445" started-at="2020-09-20T06:15:20Z" finished-at="2020-09-20T06:16:01Z">
+        <test-method status="FAIL" signature="amazonLogin()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="amazonLogin" duration-ms="41039" started-at="2020-09-20T06:23:23Z" finished-at="2020-09-20T06:24:04Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[Can't locate an element by this strategy: By.chained({By.xpath: //android.view.View[5]/android.view.View[2]/android.widget.EditText})]]>
@@ -48,7 +48,7 @@ at org.testng.TestNG.run(TestNG.java:1017)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@172b013 (tried for 1 second(s) with 500 milliseconds interval)
+Caused by: org.openqa.selenium.TimeoutException: Expected condition failed: waiting for io.appium.java_client.pagefactory.AppiumElementLocator$WaitingFunction@2796aeae (tried for 1 second(s) with 500 milliseconds interval)
 at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:315)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:283)
 at io.appium.java_client.pagefactory.AppiumElementLocator.waitFor(AppiumElementLocator.java:99)
@@ -80,7 +80,7 @@ at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:260)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- amazonLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="tearDown" is-config="true" duration-ms="386" started-at="2020-09-20T06:16:01Z" finished-at="2020-09-20T06:16:01Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:rough.LoginViaExcel@4d41cee]" name="tearDown" is-config="true" duration-ms="363" started-at="2020-09-20T06:24:04Z" finished-at="2020-09-20T06:24:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
