@@ -40,18 +40,26 @@ public class BuyNowPage extends TestBase{
 	//Actions:
 	public void SearchTV() throws InterruptedException{
 		Thread.sleep(3000);
+		//home page refresh
 		AmazonLogo.click();
+		logger.debug("Refreshed home page");
 		Thread.sleep(3000);
+		
+		//cicking on search button
 		SearchBox.click();
 		Thread.sleep(3000);
+		
+		//Entering search item
 		SearchBar.sendKeys("65-inch TV");
 		
+		//Clicking on enter button
 		((RemoteWebDriver) driver).executeScript("mobile: performEditorAction",
 				ImmutableMap.of("action", "search"));
 		System.out.println("Clicked on Enter button");
 		
 		Thread.sleep(6000);
 		
+		//scrolling to SonyX800H TV
 		String SonyX800H = "Sony X800H";
 		driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
@@ -60,14 +68,7 @@ public class BuyNowPage extends TestBase{
 		System.out.println("Sony X800H found <3 ");
 		Thread.sleep(5000);
 		
-		MobileElement imageList = (MobileElement) driver.findElement(By.className("android.widget.ListView"));
-		List<MobileElement> img = imageList.findElements(By.className("android.view.View"));
-		img.get(2).click();
-		
-		
-		
-		Thread.sleep(3000);
-		
+		//Getting product description from product page
 		MobileElement PPDescription = driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
 						+ "Sony X800H 65" + "\").instance(0))");

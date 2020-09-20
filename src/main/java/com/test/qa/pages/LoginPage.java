@@ -56,28 +56,45 @@ public class LoginPage extends TestBase{
 	public void login() throws InterruptedException{
 		Thread.sleep(3000);
 		signinBtn.click();
-		Thread.sleep(3000);
+		logger.debug("Clicked on 'Already customer, Sign in'");
+		//Clicked on 'Already customer, Sign in
+		Thread.sleep(5000);
+		
 		EmailId.sendKeys(prop.getProperty("username"));
+		logger.debug("Entered email id");
 		Thread.sleep(3000);
+		//entered username
+		
 		Signin_ContinueBtn.click();
+		logger.debug("clicked on contiue button");
 		Thread.sleep(3000);
+		//clicked on signin button
 		
 		password.sendKeys(prop.getProperty("password"));
 		Thread.sleep(3000);
+		logger.debug("Entered password");
+		//Entered password
 		
 		Signin_submitBtn.click();
+		//clicked on submit button
+		
+		Thread.sleep(4000);
 		driver.findElement(By.id("com.amazon.mShop.android.shopping:id/chrome_action_bar_home")).click();
 		
+		logger.debug("clicked submit button");
 		Thread.sleep(25000);
+		logger.debug("User is signed in");
 	}
 	
 	public void isHomebuttonDisplayed() {
 		
+		//Asserting by using checking home screen button is displaying or not
 		String AmazonHome = driver.findElement(By.id("com.amazon.mShop.android.shopping:id/chrome_action_bar_home")).getId();
 		System.out.println(AmazonHome);
 		
 		try {
-		Assert.assertEquals("07332b75-260b-4d51-8bfb-94a792343338", AmazonHome); 
+			Assert.assertEquals("com.amazon.mShop.android.shopping:id/chrome_action_bar_home", AmazonHome); 
+			logger.debug("Asserted : Displaying Home screen button");
 		}catch(Exception e) {
 			System.out.println("Login Test case Fail");
 		}

@@ -12,13 +12,15 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.test.qa.util.TestUtil;
-
+import org.apache.log4j.Logger;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 
 
 public class TestBase {
 	
+	public static Logger logger = Logger.getLogger(TestBase.class);
+
 	public static Properties prop;
 	public static AndroidDriver<MobileElement> driver;
 	public WebDriverWait wait;
@@ -51,6 +53,9 @@ public class TestBase {
 			caps.setCapability("noReset", prop.getProperty("noReset"));
 			driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), caps);
 			driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
-		
+			
+			
+			logger.debug("Capabilities loaded");
+			//capabilities loaded
 		}
 	}	
