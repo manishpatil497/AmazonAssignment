@@ -1,4 +1,4 @@
-package com.test.qa.testcases;
+package rough;
 
 import java.io.IOException;
 
@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.test.qa.base.TestBase;
-import com.test.qa.pages.LoginExcelInput;
 import com.test.qa.pages.LoginPage;
 
 public class LoginViaExcel extends TestBase{

@@ -18,43 +18,38 @@ import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import io.appium.java_client.touch.offset.PointOption;
 
-public class SwipePage extends TestBase{
+public class SwipePage extends TestBase {
 
-	//Click here to visit image landing page
-	@AndroidFindBy(id="com.amazon.mShop.android.shopping:id/chrome_action_bar_home_logo")
+	// Click here to visit image landing page
+	@AndroidFindBy(id = "com.amazon.mShop.android.shopping:id/chrome_action_bar_home_logo")
 	MobileElement AmazonLogo;
-	
-	
-	public SwipePage(AppiumDriver<MobileElement> driver) throws IOException {
-		  PageFactory.initElements(new AppiumFieldDecorator(driver), this);
-		  
-		  // TODO Auto-generated constructor stub
-	}
-	
 
-	public void SwipeImage() throws InterruptedException{
+	public SwipePage(AppiumDriver<MobileElement> driver) throws IOException {
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+
+		// TODO Auto-generated constructor stub
+	}
+
+	public void SwipeImage() throws InterruptedException {
 		Thread.sleep(3000);
+
+		// Refreshing home page
 		AmazonLogo.click();
 		Thread.sleep(3000);
-		
+
+		// Swiping images
 		Dimension size = driver.manage().window().getSize();
 		int startX = (int) (size.width / 0.85);
 		int endX = (int) (size.height * 0.25);
 		int startY = (int) (size.height * 0.25);
-		
-		for(int i = 1; i<=4; i++) {
-		  TouchAction swipe = new TouchAction(driver)
-		            .press(PointOption.point(endX,startY))
-		            .moveTo(PointOption.point(startX,startY))
-		            .waitAction()
-		            .release()
-		            .perform();
-		System.out.println("Swipe : "+ i);
+
+		for (int i = 1; i <= 4; i++) {
+			TouchAction swipe = new TouchAction(driver).press(PointOption.point(endX, startY))
+					.moveTo(PointOption.point(startX, startY)).waitAction().release().perform();
+			System.out.println("Swipe : " + i);
 		}
-		
+
 		Thread.sleep(8000);
 	}
-	
-	
-	
+
 }

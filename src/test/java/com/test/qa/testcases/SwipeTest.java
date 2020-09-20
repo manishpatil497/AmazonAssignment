@@ -10,33 +10,29 @@ import com.test.qa.base.TestBase;
 import com.test.qa.pages.BuyNowPage;
 import com.test.qa.pages.SwipePage;
 
-public class SwipeTest  extends TestBase{
+public class SwipeTest extends TestBase {
 	SwipePage swipeHome;
-	
-	
-	public SwipeTest(){
+
+	public SwipeTest() {
 		super();
 	}
-	
-	
+
 	@BeforeMethod
-	public void setUp() throws IOException{
+	public void setUp() throws IOException {
 		initialization();
 		swipeHome = new SwipePage(driver);
-		
-	}		
-	
-	@Test
-	public void buyTV() throws InterruptedException{
-		//Swipe on home page
-		swipeHome.SwipeImage();
-		
-	}
-	
-	@AfterMethod
-	public void tearDown(){
-		driver.quit();
+
 	}
 
-	
+	@Test
+	public void buyTV() throws InterruptedException {
+		// Swipe on home page
+		swipeHome.SwipeImage();
+
+	}
+
+	@AfterMethod
+	public void tearDown() {
+		driver.quit();
+	}
 }

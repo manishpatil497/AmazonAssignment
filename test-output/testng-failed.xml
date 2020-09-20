@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.qa.testcases.LoginTest">
+      <class name="rough.LoginViaExcel">
         <methods>
-          <include name="amazonLogin"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="amazonLogin"/>
         </methods>
-      </class> <!-- com.test.qa.testcases.LoginTest -->
+      </class> <!-- rough.LoginViaExcel -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

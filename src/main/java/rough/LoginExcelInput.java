@@ -1,4 +1,4 @@
-package com.test.qa.pages;
+package rough;
 
 import java.io.IOException;
 
