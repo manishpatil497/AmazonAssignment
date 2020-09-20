@@ -56,6 +56,7 @@ public class LoginExcelInput extends TestBase{
 			
 			String sUserName = ExcelUtils.getCellData(1, 1);
 			String sPassword = ExcelUtils.getCellData(1, 2);
+			System.out.println("username : "+ sUserName);
 			
 			Thread.sleep(3000);
 			signinBtn.click();
