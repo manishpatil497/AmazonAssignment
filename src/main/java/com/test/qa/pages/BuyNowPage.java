@@ -1,11 +1,15 @@
 package com.test.qa.pages;
 
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
 import com.google.common.collect.ImmutableMap;
 import com.test.qa.base.TestBase;
 
@@ -76,6 +80,7 @@ public class BuyNowPage extends TestBase{
 		System.out.println("Product Description from product page : " + prdPageDrecription);
 		Thread.sleep(5000);
 		
+		//Getting product price from product page
 		MobileElement PriceOnProductPage = driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
 						+ "998" + "\").instance(0))");
@@ -83,6 +88,7 @@ public class BuyNowPage extends TestBase{
 		System.out.println("Product price on Product page : " + PriceOnProductPage1);
 		Thread.sleep(5000);
 
+		//Add product to cart
 		String str = "Add to Cart";
 		driver.findElementByAndroidUIAutomator(
 				"new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().textContains(\""
@@ -91,28 +97,63 @@ public class BuyNowPage extends TestBase{
 		System.out.println("TV added to cart");
 		Thread.sleep(8000);
 		
+		//Clicking on cart icon
 		cartIcon.click();
 		Thread.sleep(8000);
 		
+		//Checking product description on cart page
 		MobileElement Description_AtCart = driver.findElement(
 				MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + "Sony X800H" + "\")"));
 		String Description_Atcart1 = Description_AtCart.getText();
 		System.out.println("ProductDescription_OncartPage1 : " + Description_Atcart1);
 
+		//Checking product price at cart
 		List<MobileElement> List_ProductPrice_onCartPage = driver
 				.findElements(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + "$" + "\")"));
 		String ProductPrice_onCartPage = List_ProductPrice_onCartPage.get(1).getText();
 		System.out.println(ProductPrice_onCartPage);
 
 		Thread.sleep(10000);
-		// Delete
+		
+		// Deleting item from cart
 		MobileElement DeleteItemsFromCart = driver
 				.findElement(MobileBy.AndroidUIAutomator("new UiSelector().textContains(\"" + "Delete" + "\")"));
 		DeleteItemsFromCart.click();
 		
-	}
+
+		
+		//using String split function
+		//Matching product description
+        
+        String[] words = Description_Atcart1.split(" ");
+        Pattern pattern = Pattern.compile(" ");
+        words = pattern.split(Description_Atcart1);
+        System.out.println(Arrays.toString(words));
+       
+       
+       try {
+           Assert.assertTrue(containsWords(prdPageDrecription, words));
+           System.out.println("Pass");
+       }
+       catch (AssertionError e)
+       {
+           System.out.println("Fail");
+           System.out.println(e);
+       }
 	
-	public void isHomebuttonDisplayed() {
 		
 	}
+	
+	 public static boolean containsWords(String inputString, String[] items) {
+	        boolean found = true;
+	        for (String item : items) {
+	            if (!inputString.contains(item)) {
+	                found = false;
+	                break;
+	            }
+	        }
+	        return found;
+	    }
+	
+	
 }

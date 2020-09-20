@@ -26,8 +26,10 @@ public class BuyNowTest extends TestBase{
 
 	@Test
 	public void buyTV() throws InterruptedException{
+		//Added TV to cart and validated
 		buyNowPage.SearchTV();
-		buyNowPage.isHomebuttonDisplayed();		
+		
+		
 	}
 	
 	@AfterMethod

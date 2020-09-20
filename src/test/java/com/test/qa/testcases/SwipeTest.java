@@ -28,7 +28,9 @@ public class SwipeTest  extends TestBase{
 	
 	@Test
 	public void buyTV() throws InterruptedException{
-		swipeHome.SwipeImage();;
+		//Swipe on home page
+		swipeHome.SwipeImage();
+		
 	}
 	
 	@AfterMethod
